@@ -6,8 +6,10 @@ import { IconButton, MenuItem } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
 import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/styles";
 
-import "./NavBar.css";
+import styles from "./Styles/NavBarStyles";
+// import "./NavBar.css";
 
 class NavBar extends Component {
   constructor(props) {
@@ -25,14 +27,14 @@ class NavBar extends Component {
   }
   render() {
     return (
-      <header className="Navbar">
-        <div className="Logo">
+      <header className={this.props.classes.Navbar}>
+        <div className={this.props.classes.Logo}>
           <Link to="/">ColorPickerReact</Link>
         </div>
         {this.props.showingAllColors && (
           <div className="slider-container">
             <span>Level: {this.props.level}</span>
-            <div className="slider">
+            <div className={this.props.classes.slider}>
               <Slider
                 defaultValue={this.props.level}
                 min={100}
@@ -43,7 +45,7 @@ class NavBar extends Component {
             </div>
           </div>
         )}
-        <div className="select-container">
+        <div className={this.props.classes.selectContainer}>
           <Select value={this.state.format} onChange={this.handleChange}>
             <MenuItem value="hex">HEX - #ffffff</MenuItem>
             <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
@@ -67,4 +69,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default withStyles(styles)(NavBar);

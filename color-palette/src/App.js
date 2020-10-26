@@ -6,6 +6,7 @@ import Palette from "./Palette";
 import { generatePalette } from "./colorHelpers";
 import seedColors from "./seedColors";
 import PaletteList from "./PaletteList";
+import NewPaletteForm from "./NewPaletteForm";
 
 function App() {
   const findPalette = (id) => {
@@ -15,6 +16,7 @@ function App() {
   };
   return (
     <Switch>
+      <Route exact path="/palette/new" render={() => <NewPaletteForm />} />
       <Route
         exact
         path="/palette/:paletteId/:colorId"
