@@ -3,7 +3,7 @@ import { withStyles } from "@material-ui/styles";
 
 import ColorBox from "./ColorBox";
 import NavBar from "./NavBar";
-import styles from "./Styles/PaletteStyles";
+import styles from "./styles/PaletteStyles";
 import { Link } from "react-router-dom";
 import PaletteFooter from "./PaletteFooter";
 

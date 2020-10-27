@@ -8,7 +8,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 
-import styles from "./Styles/NavBarStyles";
+import styles from "./styles/NavBarStyles";
 // import "./NavBar.css";
 
 class NavBar extends Component {
